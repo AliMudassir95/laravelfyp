@@ -8,4 +8,10 @@ class Photo extends Model
 {
     protected $fillable = ['file'];
 
+    protected $upload_directory = "/images/";
+
+    public function getFileAttribute($file){
+        return $this->upload_directory . $file;
+    }
+
 }
