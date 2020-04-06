@@ -3,6 +3,12 @@
 
 
 @section('content')
+{{--  @if(Session::has('message'))--}}
+  @if(session('message'))
+    <div class="alert alert-success" role="alert">
+      {{session('message')}}
+    </div>
+  @endif
 
     <table class="table">
       <thead>
