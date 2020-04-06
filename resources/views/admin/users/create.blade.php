@@ -4,7 +4,7 @@
 @section('content')
     <h1>Create User</h1>
 
-    {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store']) !!}
+    {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store','files'=>true]) !!}
 
         <div class="form-group">
             {!! Form::label('name','Name:') !!}
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::file('file') !!}
+            {!! Form::file('photo_id') !!}
         </div>
 
         <br>
