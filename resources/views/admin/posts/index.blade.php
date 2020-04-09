@@ -3,11 +3,6 @@
 @section('content')
 
     <h1>Posts</h1>
-    @extends('layouts.admin')
-
-
-
-@section('content')
     {{--  @if(Session::has('message'))--}}
     @if(session('message'))
         <div class="alert alert-success" role="alert">
@@ -38,10 +33,13 @@
                     <th scope="row">{{$post->id}}</th>
                     <td><img class="img-circle" width="50" height="40" src="{{$post->photo ? $post->photo->file : "http://placehold.it/400x400"}}" alt=""></td>
                     <td>{{$post->user_id ? $post->user->name : 'Unknown'}}</td>
-                    <td>{{$post->title}}</td>
+                    <td><a href="{{route('home.post',$post->slug)}}">{{$post->title}}</a></td>
                     <td>{{$post->category_id ? $post->category->name : 'Unknown'}}</td>
                     <td>{{$post->created_at->diffForHumans()}}</td>
                     <td>{{$post->updated_at->diffForHumans()}}</td>
+                    <td>
+                        <a href="{{route('admin.comments.show',$post->id)}}">Show Comments</a>
+                    </td>
                 </tr>
             @endforeach
         @endif
@@ -49,8 +47,6 @@
 
         </tbody>
     </table>
-
-@endsection
 
 
 @stop

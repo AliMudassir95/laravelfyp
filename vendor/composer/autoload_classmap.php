@@ -7,8 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddForienKeyConstraintToPosts' => $baseDir . '/database/migrations/2020_04_07_203224_add_forien_key_constraint_to_posts.php',
+    'AddPhotoFieldInCommentReplies' => $baseDir . '/database/migrations/2020_04_09_002308_add_photo_field_in_comment_replies.php',
     'AddPhotoIdColoumnToUsers' => $baseDir . '/database/migrations/2020_04_06_125401_add_photo_id_coloumn_to_users.php',
+    'AddPhotoIdFieldInComment' => $baseDir . '/database/migrations/2020_04_08_202820_add_photo_id_field_in_comment.php',
+    'AddSlugToPostsTable' => $baseDir . '/database/migrations/2020_04_09_122547_add_slug_to_posts_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2020_04_07_154822_create_categories_table.php',
+    'CreateCommentRepliesTable' => $baseDir . '/database/migrations/2020_04_08_164452_create_comment_replies_table.php',
+    'CreateCommentsTable' => $baseDir . '/database/migrations/2020_04_08_164433_create_comments_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePhotosTable' => $baseDir . '/database/migrations/2020_04_06_133637_create_photos_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2020_04_07_121558_create_posts_table.php',

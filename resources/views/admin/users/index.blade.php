@@ -9,6 +9,7 @@
       {{session('message')}}
     </div>
   @endif
+<h1>Users</h1>
 
     <table class="table">
       <thead>

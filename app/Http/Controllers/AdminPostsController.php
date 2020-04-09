@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostEditRequest;
+use App\Http\Requests\PublicCommentRequest;
 use App\Photo;
 use App\Post;
 use Illuminate\Http\Request;
@@ -123,4 +124,20 @@ class AdminPostsController extends Controller
         $post->delete();
         return redirect('admin/posts');
     }
+
+//    custom method
+    public function post($slug){
+
+//        $post = Post::findOrFail($id);
+//        $comments = $post->comments->where('is_active',1)->sortByDesc('id');
+//        return view('post',compact('post','comments'));
+
+        $post = Post::where('slug',$slug)->first();
+        $comments = $post->comments->where('is_active',1)->sortByDesc('id');
+        return view('post',compact('post','comments'));
+    }
+
+//    public function publicComment(PublicCommentRequest $request){
+//        return "this is public comment, i have done it";
+//    }
 }
